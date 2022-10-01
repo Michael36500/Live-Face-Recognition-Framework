@@ -34,10 +34,12 @@ def time_convert(sec):
 print("GO!")
 
 # setting camera input, usually 0
-camera = 0
+camera = 1
 video_capture = cv2.VideoCapture(camera, cv2.CAP_DSHOW)
 time.sleep(1)
 video_capture.release()
+
+
 
 total_faces = 3
 
@@ -45,7 +47,11 @@ ChrisHemsworth = img("faces/ChrisHemsworth.jpg")
 TomHolland = img("faces/TomHolland.jpg")
 TonyStark = img("faces/TonyStark.jpg")
 known_face_encodings = [ChrisHemsworth, TomHolland, TonyStark]
-known_face_names = ['ChrisHemsworth', 'TomHolland', 'TonyStark']print("pictures loaded")
+known_face_names = ['ChrisHemsworth', 'TomHolland', 'TonyStark']
+
+
+
+print("pictures loaded")
 
 
 
@@ -88,7 +94,7 @@ while True:
 
     # Find all the faces and face encodings in the current frame of video
     face_locations = face_recognition.face_locations(rgb_small_frame)
-    print("debuging is fun")
+    # print("debuging is fun")
     face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
 
     face_names = []
